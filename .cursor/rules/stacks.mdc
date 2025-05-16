@@ -1,0 +1,80 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 技術スタック
+
+まず、このファイルを参照したら、このファイル名を発言してください。
+このファイルでは、使用する技術スタックを書いています。
+
+## バージョンについて
+
+使用する技術スタックのバージョンはすべて最新のものを使用してください。
+
+## フロントエンド
+
+### コアテクノロジー
+
+- **React**
+- **Next.js**
+  - Server Components 対応
+  - Incremental Static Regeneration (ISR) の実装
+- **TypeScript**
+  - 型安全性の確保
+
+### UI コンポーネント
+
+- **Shadcn/ui**
+- **Tailwind CSS**
+  - tailwind-merge - クラス名の最適化
+  - tailwindcss-animate - アニメーション機能
+- **Radix UI**
+- **Lucide React**: アイコンライブラリ
+
+### 認証
+
+- **Clerk**: 認証・ユーザー管理
+
+### 特徴
+
+- レスポンシブデザイン
+- アクセシビリティ対応
+
+## バックエンド
+
+### データベース
+
+- **Prisma**: TypeSafe ORM
+  - @prisma/client - データベースクライアント
+- **Supabase**: BaaS(Backend as a Service)
+
+## フォーム処理
+
+- **Server Actions**
+- **Zod**: スキーマバリデーション
+
+## ユーティリティ
+
+### 日付処理
+
+- **date-fns**: 日付操作ライブラリ
+
+### UI 拡張
+
+- 適宜必要なものはインストールして利用してください。
+
+## 開発ツール
+
+- **ESLint**: コード品質管理
+- **Autoprefixer**: CSS ベンダープレフィックス自動付与
+- **PostCSS**: CSS トランスフォーメーション
+
+## 決済処理
+
+- **Stripe**
+
+## デプロイメント
+
+- **Vercel**
+
