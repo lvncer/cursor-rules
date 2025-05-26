@@ -27,6 +27,7 @@ Cursor エディタ用の開発ルール集です。効率的で一貫性のあ�
 
 ### 📖 手動参照ルール
 
+- **[テスト駆動開発(TDD)](/.cursor/rules/tdd.mdc)** - テスト主導の開発プロセス
 - **[データベース設計ルール](/.cursor/rules/db.mdc)** - DB 設計と SQL 管理
 
 ## 🛠️ 技術スタック
@@ -47,6 +48,8 @@ Cursor エディタ用の開発ルール集です。効率的で一貫性のあ�
 ### 開発ツール
 
 - **ESLint** + **PostCSS**
+- **Jest** + **React Testing Library** (テスト)
+- **Cypress/Playwright** (E2E テスト)
 - **Stripe** (決済)
 - **Vercel** (デプロイ)
 
@@ -66,20 +69,21 @@ Cursor エディタとの統合機能：
 
 ## 📁 プロジェクト構造
 
-```
+```sh
 cursor-rules/
 ├── .cursor/
-│   ├── rules/              # 開発ルール集
-│   │   ├── globals.mdc     # グローバルルール
-│   │   ├── nextjs.mdc      # Next.jsルール
-│   │   ├── stacks.mdc      # 技術スタック
-│   │   ├── uiux.mdc        # UI/UXルール
-│   │   ├── db.mdc          # データベースルール
-│   │   ├── todo.mdc        # TODO管理
-│   │   └── chat-history.mdc # チャット履歴管理
-│   └── mcp.json           # MCP設定
-├── README.md              # このファイル
-└── .gitignore.example     # Git除外設定例
+│   ├── rules/               # 開発ルール集
+│   │   ├── globals.mdc      # グローバルルール
+│   │   ├── nextjs.mdc       # Next.jsルール
+│   │   ├── stacks.mdc       # 技術スタック
+│   │   ├── uiux.mdc         # UI/UXルール
+│   │   ├── db.mdc           # データベースルール
+│   │   ├── todo.mdc         # TODO管理
+│   │   ├── chat-history.mdc # チャット履歴管理
+│   │   └── tdd.mdc          # テスト駆動開発
+│   └── mcp.json            # MCP設定
+├── README.md               # このファイル
+└── .gitignore.example      # Git除外設定例
 ```
 
 ## 🚀 使用方法
@@ -106,6 +110,7 @@ cp .gitignore.example .gitignore
 - 各ルールファイルは自動的に Cursor に読み込まれます
 - 開発時に AI が適切なルールを参照して支援します
 - 重要な決定や会話は自動的に履歴として保存されます
+- テスト駆動開発で品質を確保しながら実装を進めます
 
 ## 📝 ルールの特徴
 
@@ -123,6 +128,7 @@ cp .gitignore.example .gitignore
 
 ### 🛡️ 品質保証
 
+- テスト駆動開発による高品質コード
 - エラー防止のためのチェックリスト
 - コードレビューの自動化
 - セキュリティベストプラクティス
