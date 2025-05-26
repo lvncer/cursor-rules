@@ -5,76 +5,55 @@ alwaysApply: true
 ---
 # 技術スタック
 
-まず、このファイルを参照したら、このファイル名を発言してください。
-このファイルでは、使用する技術スタックを書いています。
+参照時は必ずファイル名を発言してください。
 
-## バージョンについて
+## バージョン
 
-使用する技術スタックのバージョンはすべて最新のものを使用してください。
+すべて最新バージョンを使用
 
 ## フロントエンド
 
-### コアテクノロジー
+### コア
 
 - **React**
-- **Next.js**
-  - Server Components 対応
-  - Incremental Static Regeneration (ISR) の実装
+- **Next.js** (Server Components 対応)
 - **TypeScript**
-  - 型安全性の確保
 
-### UI コンポーネント
+### UI
 
 - **Shadcn/ui**
 - **Tailwind CSS**
-  - tailwind-merge - クラス名の最適化
-  - tailwindcss-animate - アニメーション機能
 - **Radix UI**
-- **Lucide React**: アイコンライブラリ
+- **Lucide React** (アイコン)
 
 ### 認証
 
-- **Clerk**: 認証・ユーザー管理
-
-### 特徴
-
-- レスポンシブデザイン
-- アクセシビリティ対応
+- **Clerk**
 
 ## バックエンド
 
 ### データベース
 
-- **Prisma**: TypeSafe ORM
-  - @prisma/client - データベースクライアント
-- **Supabase**: BaaS(Backend as a Service)
+- **Prisma** (TypeSafe ORM)
+- **Supabase** (BaaS)
 
-## フォーム処理
+## その他
+
+### フォーム・バリデーション
 
 - **Server Actions**
-- **Zod**: スキーマバリデーション
+- **Zod**
 
-## ユーティリティ
+### ユーティリティ
 
-### 日付処理
+- **date-fns** (日付処理)
 
-- **date-fns**: 日付操作ライブラリ
+### 開発ツール
 
-### UI 拡張
+- **ESLint**
+- **PostCSS**
 
-- 適宜必要なものはインストールして利用してください。
-
-## 開発ツール
-
-- **ESLint**: コード品質管理
-- **Autoprefixer**: CSS ベンダープレフィックス自動付与
-- **PostCSS**: CSS トランスフォーメーション
-
-## 決済処理
+### 決済・デプロイ
 
 - **Stripe**
-
-## デプロイメント
-
 - **Vercel**
-
