@@ -19,7 +19,6 @@ Cursor エディタ用の開発ルール集です。効率的で一貫性のあ�
 - **[TODO 管理ルール](/.cursor/rules/todo.mdc)** - タスク管理とプロジェクト進行
 - **[Next.js ベストプラクティス](/.cursor/rules/nextjs.mdc)** - Next.js 開発の標準規約
 - **[技術スタック](/.cursor/rules/stacks.mdc)** - 使用技術とバージョン管理
-- **[AI チャット履歴管理](/.cursor/rules/chat-history.mdc)** - AI 会話の記録と管理
 
 ### 🎨 ファイル種別ルール
 
@@ -29,29 +28,6 @@ Cursor エディタ用の開発ルール集です。効率的で一貫性のあ�
 
 - **[テスト駆動開発(TDD)](/.cursor/rules/tdd.mdc)** - テスト主導の開発プロセス
 - **[データベース設計ルール](/.cursor/rules/db.mdc)** - DB 設計と SQL 管理
-
-## 🛠️ 技術スタック
-
-### フロントエンド
-
-- **React** + **Next.js** (Server Components)
-- **TypeScript** (厳格モード)
-- **Shadcn/ui** + **Tailwind CSS**
-- **Clerk** (認証)
-
-### バックエンド
-
-- **Prisma** (ORM)
-- **Supabase** (BaaS)
-- **Server Actions** + **Zod** (フォーム処理)
-
-### 開発ツール
-
-- **ESLint** + **PostCSS**
-- **Jest** + **React Testing Library** (テスト)
-- **Cypress/Playwright** (E2E テスト)
-- **Stripe** (決済)
-- **Vercel** (デプロイ)
 
 ## 🔧 MCP (Model Context Protocol)
 
@@ -80,7 +56,6 @@ cursor-rules/
 │   │   ├── uiux.mdc         # UI/UXルール
 │   │   ├── db.mdc           # データベースルール
 │   │   ├── todo.mdc         # TODO管理
-│   │   ├── chat-history.mdc # チャット履歴管理
 │   │   └── tdd.mdc          # テスト駆動開発
 │   └── mcp.json            # MCP設定
 ├── README.md               # このファイル
@@ -112,6 +87,16 @@ cp .gitignore.example .gitignore
 - 開発時に AI が適切なルールを参照して支援します
 - 重要な決定や会話は自動的に履歴として保存されます
 - テスト駆動開発で品質を確保しながら実装を進めます
+
+### 4. チャット履歴の手動保存
+
+```bash
+# TODO完了時やコミット前に実行
+# 1. Cursorのチャット画面で右クリック → Export Chat
+# 2. 適切なディレクトリに保存
+mkdir -p .cursor/chat-history/$(date +%Y-%m)
+# 3. ファイル名: YYYYMMDD_カテゴリ_概要.md
+```
 
 ## 📝 ルールの特徴
 
