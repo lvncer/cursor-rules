@@ -94,7 +94,7 @@ cp .gitignore.example .gitignore
 # TODO完了時やコミット前に実行
 # 1. Cursorのチャット画面で右クリック → Export Chat
 # 2. 適切なディレクトリに保存
-mkdir -p .cursor/chat-history/$(date +%Y-%m)
+mkdir -p .cursor/prompts/$(date +%Y-%m)
 # 3. ファイル名: YYYYMMDD_カテゴリ_概要.md
 ```
 
