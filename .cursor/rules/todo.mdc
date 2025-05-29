@@ -9,7 +9,8 @@ alwaysApply: true
 
 ## 基本ルール
 
-- 保存先: `/.cursor/prompts/機能/todo.md`
+- 保存先: `/.cursor/todo/<機能>.md`
+- 機能名は具体的で分かりやすい名前に変更する（例：`user-auth.md`, `payment-system.md`, `blog-feature.md`）
 - 機能実装後は毎回 TODO 確認・更新
 - 自動的に中身を随時更新
 - 機能は段階的に追加（最初から増やしすぎない）
