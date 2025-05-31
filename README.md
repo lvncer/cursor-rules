@@ -16,7 +16,7 @@ Cursor エディタ用の開発ルール集です。効率的で一貫性のあ�
 ### 🔄 常時適用ルール
 
 - **[グローバルルール](/.cursor/rules/globals.mdc)** - 基本的な開発原則と実行フロー
-- **[TODO 管理ルール](/.cursor/rules/todo.mdc)** - タスク管理とプロジェクト進行
+- **[ワークフロー](/.cursor/rules/workflow.mdc)** - Issue 管理・Git 操作・PR 作成の統合フロー
 - **[Next.js ベストプラクティス](/.cursor/rules/nextjs.mdc)** - Next.js 開発の標準規約
 - **[技術スタック](/.cursor/rules/stacks.mdc)** - 使用技術とバージョン管理
 
@@ -49,17 +49,19 @@ Cursor エディタとの統合機能：
 ```sh
 cursor-rules/
 ├── .cursor/
-│   ├── rules/               # 開発ルール集
-│   │   ├── globals.mdc      # グローバルルール
-│   │   ├── nextjs.mdc       # Next.jsルール
-│   │   ├── stacks.mdc       # 技術スタック
-│   │   ├── uiux.mdc         # UI/UXルール
-│   │   ├── db.mdc           # データベースルール
-│   │   ├── todo.mdc         # TODO管理
-│   │   └── tdd.mdc          # テスト駆動開発
-│   └── mcp.json            # MCP設定
-├── README.md               # このファイル
-└── .gitignore.example      # Git除外設定例
+│   ├── prompts/
+│   │   └── yyyymmdd_category.md    # 手動エクスポートしたプロンプトファイル
+│   ├── rules/
+│   │   ├── globals.mdc             # グローバルルール
+│   │   ├── workflow.mdc            # 統合ワークフロー（Issue・Git・PR）
+│   │   ├── nextjs.mdc              # Next.jsルール
+│   │   ├── stacks.mdc              # 技術スタック
+│   │   ├── uiux.mdc                # UI/UXルール
+│   │   ├── db.mdc                  # データベースルール
+│   │   └── tdd.mdc                 # テスト駆動開発
+│   └── mcp.json                    # MCP設定
+├── README.md
+└── .gitignore.example
 ```
 
 ## 🚀 使用方法
@@ -85,17 +87,18 @@ cp .gitignore.example .gitignore
 
 - 各ルールファイルは自動的に Cursor に読み込まれます
 - 開発時に AI が適切なルールを参照して支援します
-- 重要な決定や会話は自動的に履歴として保存されます
+- **GitHub Issue でタスク管理**し、一元的な進捗管理を実現
 - テスト駆動開発で品質を確保しながら実装を進めます
 
-### 4. チャット履歴の手動保存
+### 4. 開発ワークフロー
 
 ```bash
-# TODO完了時やコミット前に実行
-# 1. Cursorのチャット画面で右クリック → Export Chat
-# 2. 適切なディレクトリに保存
-mkdir -p .cursor/prompts/$(date +%Y-%m)
-# 3. ファイル名: YYYYMMDD_カテゴリ_概要.md
+# 1. Issue作成（GitHub MCP使用）
+# 2. ブランチ作成
+git checkout -b feat/123-feature-name
+# 3. フェーズごとの開発・コミット
+# 4. PR作成（GitHub MCP使用）
+# 5. レビュー・マージ
 ```
 
 ## 📝 ルールの特徴
@@ -105,15 +108,17 @@ mkdir -p .cursor/prompts/$(date +%Y-%m)
 - 冗長な説明を排除
 - 要点のみに絞った実用的な内容
 - 素早い参照が可能
+- **1 つの統合ワークフローファイル**で完結
 
 ### 🔄 自動化
 
-- TODO 管理の自動更新
-- チャット履歴の自動保存
+- Issue 管理の自動更新
 - 一貫性のあるファイル構造
+- MCP 活用による効率的な操作
 
 ### 🛡️ 品質保証
 
+- **GitHub Issue による一元管理**（Single Source of Truth）
 - テスト駆動開発による高品質コード
 - エラー防止のためのチェックリスト
 - コードレビューの自動化
