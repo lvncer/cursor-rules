@@ -98,25 +98,28 @@ create_issue(
 - **各フェーズ完了時**に必ずコミット
 - フェーズ内でも意味のある単位でコミット
 
-**MCP 使用（推奨）**
+**手動コミット（推奨）**
 
-```bash
-commit_changes(
-  message="feat(auth): complete Phase 2 - user authentication (#123)",
-  files=["src/auth/", "src/types/"]
-)
-```
-
-**手動コミット**
-
-```bash
+```powershell
 git add .
-git commit -m "feat(auth): complete Phase 2 - user authentication (#123)"
+git commit -m "フェーズ2完了: ユーザー認証機能 (#123)"
 ```
 
 **コミットメッセージ形式**
 
-`.docs/COMMIT_CONVENTION.md`を参照
+- **簡潔な日本語**で記述
+- **50 文字以内**を目安
+- **Issue 番号**を必ず含める
+
+```
+# 良い例
+フェーズ1完了: 環境設定 (#123)
+バグ修正: ログイン処理 (#124)
+機能追加: パスワード変更 (#125)
+
+# 悪い例（長すぎる英語）
+feat(authentication): implement comprehensive user authentication system with JWT tokens and password validation (#123)
+```
 
 ## 3. Issue 更新・連携
 
@@ -219,7 +222,6 @@ git push origin --delete feat/123-user-auth
 ## MCP 活用ポイント
 
 - **Issue 作成・更新**: GitHub MCP
-- **コミット**: GitHub MCP
 - **PR 作成**: GitHub MCP
 - **Issue 検索**: GitHub MCP
 
@@ -239,4 +241,3 @@ git push origin --delete feat/123-user-auth
 - MCP 使用を優先
 - 手動マージ必須
 - 進捗は Issue 内で管理（Single Source of Truth）
-
