@@ -115,10 +115,9 @@ git commit -m "フェーズ2完了: ユーザー認証機能 (#123)"
 # 良い例
 フェーズ1完了: 環境設定 (#123)
 バグ修正: ログイン処理 (#124)
-機能追加: パスワード変更 (#125)
 
 # 悪い例（長すぎる英語）
-feat(authentication): implement comprehensive user authentication system with JWT tokens and password validation (#123)
+feat(authentication): implement comprehensive user authentication system...
 ```
 
 ## 3. Issue 更新・連携
