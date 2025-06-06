@@ -10,8 +10,21 @@ alwaysApply: true
 ## 基本フロー
 
 ```
-Issue作成 → ブランチ作成 → フェーズ開発 → コミット → PR作成 → マージ
+ユーザー名取得 → Issue作成 → ブランチ作成 → フェーズ開発 → コミット → PR作成 → マージ
 ```
+
+## 0. 事前準備
+
+### GitHub ユーザー名取得
+
+**開始前に必ず GitHub ユーザー名を取得**
+
+```bash
+# GitHub MCP使用
+get_user()
+```
+
+このコマンドで取得したユーザー名を以降の Issue 作成・アサイン等で使用する。
 
 ## 1. Issue 管理
 
@@ -196,6 +209,7 @@ git push origin --delete feat/123-user-auth
 
 ### 開始時
 
+- [ ] GitHubユーザー名取得済み
 - [ ] Issue 作成済み
 - [ ] フェーズ定義済み
 - [ ] 適切なラベル設定済み
@@ -220,6 +234,7 @@ git push origin --delete feat/123-user-auth
 
 ## MCP 活用ポイント
 
+- **ユーザー名取得**: GitHub MCP
 - **Issue 作成・更新**: GitHub MCP
 - **PR 作成**: GitHub MCP
 - **Issue 検索**: GitHub MCP
