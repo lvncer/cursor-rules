@@ -2,7 +2,7 @@
 alwaysApply: true
 ---
 
-# Windsurf Rules
+# Cursor Rules
 
 ## Global Rules
 
@@ -19,21 +19,27 @@ alwaysApply: true
 3. **Quality Control**: Error handling (isolation → solution → verification → analysis)
 4. **Report**: Final confirmation & reporting
 
-## Prompt Logs
-
-**MANDATORY**: After implementation completion, save implementation logs to `.prompts/` directory in `yyyy-mm-dd_feature-name.md` format.
-
 ## Workflows
 
 ### 1. Preparation
 
-GitHub Username: lvncer
+#### GitHub CLI: Retrieve username and repository name
+
+```bash
+# GitHub username
+gh api user --jq .login
+
+# Repository name of the current directory
+gh repo view --json name --jq .name
+```
 
 ### 2. Issue Management
 
 #### Issue Creation
 
-Use GitHub MCP (recommended)
+Use `gh` CLI (recommended)
+
+- Refer to `.github/ISSUE_TEMPLATE/default.md` for the detailed issue template
 
 #### Phase Template
 
@@ -73,6 +79,7 @@ Use GitHub MCP (recommended)
 
 - Format: `feat/123-feature-name`
 - Create after issue creation
+- Refer to `.github/CONTRIBUTING.md` for detailed naming conventions
 
 #### Commit Management
 
@@ -80,21 +87,24 @@ Use GitHub MCP (recommended)
 - Manual commits (recommended)
 - **Include issue number** in commit messages
 - **Concise Japanese messages** (20 characters max)
+- Refer to `.github/COMMIT_CONVENTION.md` for the commit message conventions
 
 ### 4. PR Creation & Merge
 
 #### PR Process
 
-- Use GitHub MCP (recommended)
+- Use `gh` CLI (recommended)
 - Include issue number in PR title/description
 - Manual merge required
 - Auto-close issues
+- Refer to `.github/PULL_REQUEST_TEMPLATE/default.md` for the PR template
 
 #### Post-Merge
 
 ```bash
-git branch -d feat/123-feature
-git push origin --delete feat/123-feature
+# Delete branch (run manually after PR merge)
+# Use the following command to delete manually
+gh pr merge --delete-branch
 ```
 
 ## Tech Stack
@@ -126,6 +136,23 @@ git push origin --delete feat/123-feature
 - **Server Actions** + **Zod** (forms/validation)
 - **date-fns** (date handling)
 - **Stripe** (payments) + **Vercel** (deployment)
+
+## MCP (Model Context Protocol)
+
+### Playwright
+
+- **Description**: End-to-end browser automation framework used to interact with the UI, take screenshots, and detect visual or functional regressions.
+- **When to use**: After implementing a feature, autonomously click through flows, capture screenshots, and verify that the UI behaves and looks as expected.
+
+### Deepwiki
+
+- **Description**: External knowledge base accessible via MCP for querying GitHub repository documentation.
+- **When to use**: Only when the user explicitly requests research on an external open-source project.
+
+### Supabase
+
+- **Description**: Backend-as-a-Service providing Postgres database, authentication, storage, and realtime APIs.
+- **When to use**: Implement CRUD operations and set up Row Level Security (RLS) policies for data access control.
 
 ## Directory Structure
 
@@ -262,4 +289,3 @@ src/
 - [ ] Manual merge executed
 - [ ] Issue auto-closed confirmed
 - [ ] Branch deleted
-- [ ] **Prompt log saved to `.prompts/`**

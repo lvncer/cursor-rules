@@ -23,6 +23,7 @@ Cursor エディタ用の開発ルール集です。効率的で一貫性のあ�
 - [グローバルルール](#global-rules) - 基本的な開発原則と実行フロー
 - [ワークフロー](#workflows) - Issue 管理・Git 操作・PR 作成の統合フロー
 - [技術スタック](#tech-stack) - 使用技術とバージョン管理
+- [MCP](#mcp) - 使用する MCP のツールと使用タイミング、簡単な説明を含む
 - [ディレクトリ構造](#directory-structure) - プロジェクト構造とファイル命名規則
 - [テスト駆動開発](#test-driven-development) - テスト主導の開発プロセス
 - [UI/UX ガイドライン](#uiux-guidelines) - UI/UX 設計・実装ルール
@@ -31,26 +32,34 @@ Cursor エディタ用の開発ルール集です。効率的で一貫性のあ�
 
 ## 🔧 MCP (Model Context Protocol)
 
-Cursor エディタとの統合機能：
+### Playwright
 
-- **github** - GitHub 操作（Issue 作成・PR 管理）
-- **supabase** - データベース操作
+- **概要**: UI を自動操作してスクリーンショット取得や回帰テストを行う E2E フレームワーク。
+- **使うタイミング**: 機能実装後に自律的に画面操作とスクリーンショットで挙動・見た目を検証するとき。
+
+### DeepWiki
+
+- **概要**: OSS リポジトリのドキュメントを MCP 経由で検索できる外部ナレッジベース。
+- **使うタイミング**: ユーザーが「このプロジェクトを調べて」と明示的に依頼したとき。
+
+### Supabase
+
+- **概要**: Postgres ベースの BaaS。認証・ストレージ・リアルタイム API を提供。
+- **使うタイミング**: CRUD 実装や Row Level Security (RLS) ポリシー設定など DB 操作が必要なとき。
 
 ### 設定方法
 
 1. `.cursor/mcp.json`のパスを環境に合わせて修正
-2. GitHub Personal Access Token を設定
-3. Cursor エディタを再起動
+2. Cursor エディタを再起動
 
 ## 📁 プロジェクト構造
 
 ```sh
 cursor-rules/
 ├── .cursor/
-│   ├── rules/
-│   │   └── index.mdc  # 統合ルールファイル
-│   └── mcp.json       # MCP設定
-├── README.md
+│ ├── rules/index.mdc  # 統合ルールファイル
+│ └── mcp.json         # MCP設定
+└── README.md
 ```
 
 ## 📝 ルールの特徴
