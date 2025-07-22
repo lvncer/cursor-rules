@@ -25,12 +25,16 @@ alwaysApply: true
 
 #### GitHub CLI: Retrieve username and repository name
 
-```bash
-# GitHub username
-gh api user --jq .login
+##### GitHub username
 
-# Repository name of the current directory
-gh repo view --json name --jq .name
+```bash
+whoami
+```
+
+##### Repository name of the current directory
+
+```bash
+git remote -v
 ```
 
 ### 2. Issue Management
